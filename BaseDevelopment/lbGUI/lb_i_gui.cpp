@@ -69,7 +69,7 @@ lb_I_GUIMenuBar::~lb_I_GUIMenuBar() {
 
 void lb_I_GUIMenuBar::Setup(char* applicationName) {
 LOGENABLE("lb_I_GUIMenuBar::Setup(char* applicationName)");
-LOG("Create instance lb_GUIComponent component;");
+LOG("lb_I_GUIMenuBar::Setup(char* applicationName): Create instance lb_GUIComponent component;");
 	lb_GUIComponent component;
 
 /*...sDoc:0:*/
@@ -79,12 +79,13 @@ LOG("Create instance lb_GUIComponent component;");
 	// I need an application server, that serve for several GUI components
 	// Must I differ several component types ?
 /*...e*/
-LOG("Create instance lbAppClient AppClient;");
+LOG("lb_I_GUIMenuBar::Setup(char* applicationName): Create instance lbAppClient AppClient;");
 	lbAppClient AppClient;
 
 	// The application server need to know, for which application the connection is needed.
-	LOG("Connecting to application server");
+LOG("lb_I_GUIMenuBar::Setup(char* applicationName): Connecting to application server");
 	AppClient.Connect(applicationName);
+LOG("lb_I_GUIMenuBar::Setup(char* applicationName): Connected to application server");
 
     // Is beginLoad really good?
     //TaskId tid = RemoteApp.beginLoad(); // IP stuff or other machine info is built by the local dispatcher
