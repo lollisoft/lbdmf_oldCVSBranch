@@ -94,6 +94,7 @@ void lb_Transfer_Data::add(const char* c) {
 /*...slbTransfer:0:*/
 /*...slbTransfer\58\\58\lbTransfer\40\\41\:0:*/
 lbTransfer::lbTransfer() {
+LOGENABLE("lbTransfer::lbTransfer()");
 	sock = new lbSocket();
 	laststate = 1;
 	connected = 0;
@@ -177,7 +178,7 @@ int lbTransfer::resetServerStateMachine() {
 /*...slbTransfer\58\\58\sendDatatype\40\char\42\ type\41\:0:*/
 int lbTransfer::sendDatatype(char* type) {
 	if (sock->send_charbuf(type, strlen(type)+1) == 0) {
-		LOG("lbSocket: Failed to send packet type information");
+		LOG("lbTransfer::sendDatatype(char* type): Failed to send packet type information");
 		return 0;
 	}
 	return 1;
