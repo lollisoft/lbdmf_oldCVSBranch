@@ -3,12 +3,12 @@
 
 /************************************************************************************************************
  * $Locker:  $
- * $Revision: 1.1 $
+ * $Revision: 1.1.1.1 $
  * $Name:  $
- * $Id: lbcontainer.h,v 1.1 2000/03/06 20:54:58 lolli Exp $
+ * $Id: lbcontainer.h,v 1.1.1.1 2000/03/06 20:54:58 lolli Exp $
  * $Log: lbcontainer.h,v $
- * Revision 1.1  2000/03/06 20:54:58  lolli
- * Initial revision
+ * Revision 1.1.1.1  2000/03/06 20:54:58  lolli
+ * Imported
  *
  * Revision 1.3  1999/12/14 21:07:38  lolli
  * Many changes, also bugfixes

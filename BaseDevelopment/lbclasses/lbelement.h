@@ -3,12 +3,12 @@
 
 /************************************************************************************************************
  * $Locker:  $
- * $Revision: 1.1 $
+ * $Revision: 1.1.1.1 $
  * $Name:  $
- * $Id: lbelement.h,v 1.1 2000/03/06 20:54:58 lolli Exp $
+ * $Id: lbelement.h,v 1.1.1.1 2000/03/06 20:54:58 lolli Exp $
  * $Log: lbelement.h,v $
- * Revision 1.1  2000/03/06 20:54:58  lolli
- * Initial revision
+ * Revision 1.1.1.1  2000/03/06 20:54:58  lolli
+ * Imported
  *
  * Revision 1.3  1999/12/14 21:09:02  lolli
  * Bugfixes

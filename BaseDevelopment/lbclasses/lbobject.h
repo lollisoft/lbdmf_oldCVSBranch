@@ -3,12 +3,12 @@
 
 /************************************************************************************************************
  * $Locker:  $
- * $Revision: 1.1 $
+ * $Revision: 1.1.1.1 $
  * $Name:  $
- * $Id: lbobject.h,v 1.1 2000/03/06 20:54:58 lolli Exp $
+ * $Id: lbobject.h,v 1.1.1.1 2000/03/06 20:54:58 lolli Exp $
  * $Log: lbobject.h,v $
- * Revision 1.1  2000/03/06 20:54:58  lolli
- * Initial revision
+ * Revision 1.1.1.1  2000/03/06 20:54:58  lolli
+ * Imported
  *
  * Revision 1.3  2000/01/23 14:35:04  lolli
  * Corrected error in revision conflict

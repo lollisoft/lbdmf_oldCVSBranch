@@ -3,12 +3,12 @@
 
 /************************************************************************************************************
  * $Locker:  $
- * $Revision: 1.1 $
+ * $Revision: 1.1.1.1 $
  * $Name:  $
- * $Id: lbkey.h,v 1.1 2000/03/06 20:54:58 lolli Exp $
+ * $Id: lbkey.h,v 1.1.1.1 2000/03/06 20:54:58 lolli Exp $
  * $Log: lbkey.h,v $
- * Revision 1.1  2000/03/06 20:54:58  lolli
- * Initial revision
+ * Revision 1.1.1.1  2000/03/06 20:54:58  lolli
+ * Imported
  *
  * Revision 1.4  2000/01/23 14:32:55  lolli
  * Corrected error in revision conflict
