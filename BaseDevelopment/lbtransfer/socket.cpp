@@ -24,6 +24,10 @@
 /*...e*/
 /*...e*/
 
+lbSocket::lbSocket() {
+//LOGENABLE("lbSocket::lbSocket()");
+	startupflag = 0;
+}
 /*...slbSocket\58\\58\connect\40\\41\:0:*/
 int lbSocket::connect()
 {
@@ -31,13 +35,13 @@ int lbSocket::connect()
       status=::connect(serverSocket, (LPSOCKADDR) &serverSockAddr, sizeof(serverSockAddr));
       if (status == SOCKET_ERROR)
       {
-        cerr << "ERROR: connect unsuccessful" << endl;
+        LOG("lbSocket::connect(): ERROR: connect unsuccessful");
         status=closesocket(serverSocket);
         if (status == SOCKET_ERROR)
-          cerr << "ERROR: closesocket unsuccessful" << endl;
+          LOG("lbSocket::connect(): ERROR: closesocket unsuccessful");
         status=WSACleanup();
         if (status == SOCKET_ERROR)
-          cerr << "ERROR: WSACleanup unsuccessful" << endl;
+          LOG("lbSocket::connect(): ERROR: WSACleanup unsuccessful");
         return 0;  
       }
 #endif
@@ -75,12 +79,12 @@ int lbSocket::listen()
 #ifdef WINDOWS
     status=::listen(serverSocket, 1);
     if (status == SOCKET_ERROR)
-      cerr << "ERROR: listen unsuccessful" << endl;
+      LOG("lbSocket::listen(): ERROR: listen unsuccessful");
 #endif
 #ifdef __WXGTK__
     status=::listen(serverSocket, 1);
     if (status < 0)
-      cerr << "ERROR: listen unsuccessful" << endl;
+      LOG("lbSocket::listen(): ERROR: listen unsuccessful");
 #endif
     return 1;
 }
@@ -106,12 +110,12 @@ int lbSocket::bind()
     /* associate the socket with the address */
     status=::bind(serverSocket, (LPSOCKADDR) &serverSockAddr, sizeof(serverSockAddr));
     if (status == SOCKET_ERROR)
-      cerr << "ERROR: bind unsuccessful" << endl;
+      LOG("lbSocket::bind(): ERROR: bind unsuccessful");
 #endif
 #ifdef __WXGTK__
     status=::bind(serverSocket, (sockaddr*) &serverSockAddr, sizeof(serverSockAddr));
     if (status < 0)
-      cerr << "ERROR: bind unsuccessful" << endl;
+      LOG("lbSocket::bind(): ERROR: bind unsuccessful");
 #endif
     return 1;  
 }
@@ -123,12 +127,12 @@ int lbSocket::socket()
   /* create a socket */
   serverSocket=::socket(AF_INET, SOCK_STREAM, 0);
   if (serverSocket == INVALID_SOCKET)
-    cerr << "ERROR: socket unsuccessful" << endl;
+    LOG("lbSocket::socket(): ERROR: socket unsuccessful");
 #endif
 #ifdef __WXGTK__
   serverSocket=::socket(AF_INET, SOCK_STREAM, 0);
   if (serverSocket < 0)
-    cerr << "ERROR: socket unsuccessful" << endl;
+    LOG("lbSocket::socket(): ERROR: socket unsuccessful");
 #endif
   return 1;  
 }
@@ -140,7 +144,7 @@ int lbSocket::startup()
 	if (startupflag == 0) {
 		/* initialize the Windows Socket DLL */
 		status=WSAStartup(MAKEWORD(1, 1), &Data);
-		if (status != 0) LOG("ERROR: WSAStartup unsuccessful");
+		if (status != 0) LOG("lbSocket::startup(): ERROR: WSAStartup unsuccessful");
 		/* zero the sockaddr_in structure */
 		memset(&serverSockAddr, 0, sizeof(serverSockAddr));
 		startupflag = 1;
@@ -196,6 +200,7 @@ void lbSocket::initSymbolic(char* host, char* service) {
 	hostent *entry = gethostbyname(host);
 	servent* s = getservbyname(service, NULL);
  
+/*...sStruct definition:0:*/
  /*
  struct hostent { 
      char FAR *       h_name; 
@@ -205,10 +210,12 @@ void lbSocket::initSymbolic(char* host, char* service) {
      char FAR * FAR * h_addr_list; 
  };
  */
- 	if (entry == NULL) LOG("No host address found");
-	if ((entry != NULL) && (entry->h_addr_list == NULL)) LOG("Host list is a NULL pointer!");
+/*...e*/
 
-	if(s == NULL) LOG("No service entry found");
+ 	if (entry == NULL) LOG("lbSocket::initSymbolic(char* host, char* service): No host address found");
+	if ((entry != NULL) && (entry->h_addr_list == NULL)) LOG("lbSocket::initSymbolic(char* host, char* service): Host list is a NULL pointer!");
+
+	if(s == NULL) LOG("lbSocket::initSymbolic(char* host, char* service): No service entry found");
 
  	char* hostaddr = strdup(entry->h_addr_list[0]);
  	u_short port = s->s_port;
@@ -397,7 +404,7 @@ if (isServer == 1)
                 
     if (numsnt != len + 1)
     {
-      cout << "Connection terminated" << endl;
+      LOG("lbSocket::send_charbuf(char *buf, int len): Connection terminated");
       status=closesocket(serverSocket);
       if (status == SOCKET_ERROR)
         cerr << "ERROR: closesocket unsuccessful" << endl;

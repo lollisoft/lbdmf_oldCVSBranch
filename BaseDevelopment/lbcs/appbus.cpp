@@ -30,7 +30,7 @@ char* sendConnect(lbTransfer & transfer) {
 	lb_Transfer_Data result;
 	lb_Transfer_Data request;
 
-	LOG("Send a connect request");
+	LOG("sendConnect(lbTransfer & transfer): Send a connect request");
 
 	request.add("Connect");
 
@@ -60,9 +60,9 @@ void lbAppBusClient::AnounceClient() {
 	 */
 	
 	transfer.init("//anakin/busmaster");
-
+LOG("lbAppBusClient::AnounceClient(): sendConnect(transfer)");
 	answer = strdup(sendConnect(transfer));
-
+LOG("lbAppBusClient::AnounceClient(): sendConnect(transfer) done");
 	if (strcmp(answer, "error") != 0) {
 		
 	} else {

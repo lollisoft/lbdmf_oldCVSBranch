@@ -187,6 +187,7 @@ printf("lbThreadInternal::WinThreadStart: Returning from (DWORD)thread->Entry()\
 /*...e*/
 /*...slbThread:0:*/
 lbThread::lbThread() {
+LOGENABLE("lbThread::lbThread()");
 	if (threadCount == 0) {
 		LOG("lbThread::lbThread(): OnInit() must be called");
 		if (OnInit() == 0) {

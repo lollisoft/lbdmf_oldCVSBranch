@@ -108,6 +108,7 @@ void lbAppServer::operator>> (RemoteAppRes& res) {
 /*...slbAppClient:0:*/
 /*...slbAppClient\58\\58\lbAppClient\40\\41\:0:*/
 lbAppClient::lbAppClient() {
+	LOGENABLE("lbAppClient::lbAppClient()");
 }
 /*...e*/
 /*...slbAppClient\58\\58\\126\lbAppClient\40\\41\:0:*/
@@ -133,9 +134,13 @@ void lbAppClient::Connect(const char* application) {
 	 * The Target for any anouncements must be configured by a configuration file.
 	 */
 /*...e*/
+
+/*...sVERBOSE:8:*/
 #ifdef VERBOSE
-LOG("lbAppClient::Connect(const char* application)Connecting to 
+LOG("lbAppClient::Connect(const char* application): Announce me as client");
 #endif
+/*...e*/
+
 	bus.AnounceClient(); // Announce me as a new application on the bus
 	
 /*...sDoc:8:*/
