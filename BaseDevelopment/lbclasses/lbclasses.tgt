@@ -18,8 +18,9 @@ n_2dn
 1
 4
 MCommand
-41
-copy *.h $(%DEVROOT)\projects\dll\include
+90
+copy $(%DEVROOT)\projects\basedevelopment\lbclasses\*.h $(%DEVROOT)\projects\dll\include
+
 5
 MCommand
 0
