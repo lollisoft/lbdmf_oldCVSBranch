@@ -63,7 +63,7 @@ class lb_Transfer_Data;
 
 class lbSocket {
 public:
-        lbSocket() {startupflag = 0;}
+        lbSocket();
         ~lbSocket() {}
 
 
