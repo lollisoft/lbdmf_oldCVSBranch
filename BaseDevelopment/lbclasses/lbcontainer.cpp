@@ -1,14 +1,18 @@
 
 
 
+/*...sRevision history:0:*/
 /************************************************************************************************************
  * $Locker:  $
- * $Revision: 1.1 $
+ * $Revision: 1.2 $
  * $Name:  $
- * $Id: lbcontainer.cpp,v 1.1 2000/03/06 20:54:58 lolli Exp $
+ * $Id: lbcontainer.cpp,v 1.2 2000/03/06 22:55:50 lolli Exp $
  * $Log: lbcontainer.cpp,v $
- * Revision 1.1  2000/03/06 20:54:58  lolli
- * Initial revision
+ * Revision 1.2  2000/03/06 22:55:50  lolli
+ * Fold in revision log
+ *
+ * Revision 1.1.1.1  2000/03/06 20:54:58  lolli
+ * Imported
  *
  * Revision 1.3  1999/12/14 21:07:03  lolli
  * Many changes
@@ -20,6 +24,7 @@
  * Initial
  *
  ************************************************************************************************************/
+/*...e*/
 
 //Define DLL here for implementing the module
 
